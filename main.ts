@@ -5,14 +5,19 @@
 // no randomness, no network, no external files.
 //
 // The laugh: the setup promises self-improvement, the middle concedes it
-// worked, and the punchline lands on the last words — becoming a morning
-// person turns out to be the punishment, not the prize.
+// worked, and the punchline reframes the win as a loss — the reward for
+// becoming a morning person is two extra hours a day to be furious.
 import * as fs from "node:fs";
 import * as path from "node:path";
 
-// The line. Nothing here varies between runs.
-const LINE =
-  "I set my alarm for 6 a.m. to become a morning person; it worked — I'm now a morning person, and I'm furious about it.";
+// The line, built from three parts so the turn lands in order:
+// the setup promises self-improvement, the middle concedes it worked,
+// and the punchline lands on the last words — the prize is extra hours
+// of being furious, not a better morning.
+const SETUP = "I set my alarm for 6 a.m. to become a morning person;";
+const TURN = "it worked —";
+const PUNCH = "now I get to be furious two hours earlier every day.";
+const LINE = `${SETUP} ${TURN} ${PUNCH}`;
 
 // Gate: /output/entry.txt must be UTF-8 text of 1 to 200 characters,
 // counted as Unicode code points, and not only white space.
